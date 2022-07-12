@@ -3,4 +3,4 @@
 
 This is the Next JS tutorial blog. Coded by myself, with some changes made to how the files from the posts are read into the webpage. 
 
-##### First Vercel Deployment 
+##### COMPLETE UPDATE TO REPO - FINAL 
