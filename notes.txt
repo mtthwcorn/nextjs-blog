@@ -1,0 +1,19 @@
+// pre rendering  &  static generation vs server side rendering
+
+Pre-rendering using next.js is when static (no js) html is displayed on the browser once the website is loaded
+Hydration is the process of navigating to a specific page within your website and having the js then be loaded and the app becomes interactive 
+
+React does not pre-render and it instead loads both the html and the JS at the same time 
+
+Two forms of pre-rendering: 
+Static generation is when the html is pre-rendered at buildtime (i.e. when the website is loaded) and then the html is cached and reused so when a new request is made, all of the html is already rendered
+Server-side rendering is when the html is generated on each request, so html is not reused, and therefore the server-side rendered pages must be re-loaded on each new request 
+
+Different pages can be set to have different pre-rendering modes. So one page can be static, and another can be server-side 
+
+WHen to use each: 
+Use static generation most of the time as it is more efficient and results in a more time efficient website 
+Use server side rendering if you cannot pre-render a page ahead of a users request - if a page shows requently updated data, and the page content updates on every request
+or skip pre-rendering and use client side js to populate frequently updated data 
+
+Ask: "Can I pre-render this page ahead of a user's request?" 

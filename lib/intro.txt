@@ -1,0 +1,32 @@
+Used as a library for fetching data from the file system 
+
+also sometimes called the utils folder 
+
+In posts.js, we fetch and parse the files in posts directory to get blog posts. 
+
+We could also fetch data from other sources, like an external API endpoint. 
+E.g. 
+export async function getSortedPostsData() {
+  // Instead of the file system,
+  // fetch post data from an external API endpoint
+  const res = await fetch('..');
+  return res.json();
+}
+
+Or we could query from a database directly: 
+E.g. 
+import someDatabaseSDK from 'someDatabaseSDK'
+
+const databaseClient = someDatabaseSDK.createClient(...)
+
+export async function getSortedPostsData() {
+  // Instead of the file system,
+  // fetch post data from a database
+  return databaseClient.query('SELECT posts...')
+}
+
+Note: Each of these functions could take the place of the function in /lib/posts.js 
+
+Note: we can do these because getStaticProps (in the index.js file) only runs on the server side, it will never run on the client-side. 
+It won’t even be included in the JS bundle for the browser. 
+That means you can write code such as direct database queries without them being sent to browsers.
